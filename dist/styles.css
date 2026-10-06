@@ -63,3 +63,18 @@
 .layer-rear{transform:translate(calc(-50% + var(--rear-x,0vw)),-50%) scale(.7)}.layer-core{transform:translate(calc(-50% + var(--core-x,0vw)),-50%) scale(.58)}.layer-lenses{transform:translate(calc(-50% + var(--lenses-x,0vw)),-50%) scale(.52)}.layer-sensor{transform:translate(calc(-50% + var(--sensor-x,0vw)),-50%) scale(.26)}.layer-front{transform:translate(calc(-50% + var(--front-x,0vw)),-50%) scale(.63)}
 @media(max-width:900px){.inside-assembled{width:58vw;height:32vh;transform:translate(-50%,-50%) scale(.62)}.layer-rear{transform:translate(calc(-50% + var(--rear-x,0vw)),-50%) scale(.62)}.layer-core{transform:translate(calc(-50% + var(--core-x,0vw)),-50%) scale(.5)}.layer-lenses{transform:translate(calc(-50% + var(--lenses-x,0vw)),-50%) scale(.45)}.layer-sensor{transform:translate(calc(-50% + var(--sensor-x,0vw)),-50%) scale(.22)}.layer-front{transform:translate(calc(-50% + var(--front-x,0vw)),-50%) scale(.55)}}
 
+
+
+/* Final deployment override */
+@media(max-width:900px){
+  .hero{height:auto;min-height:100svh;padding:15vh 0 5vh;display:block;overflow:clip}
+  .hero-copy{margin:0 5vw}.hero-product{position:relative;inset:auto;width:94vw;height:auto;aspect-ratio:1586/992;margin:5vh auto 0;overflow:visible}
+  .hero-product #heroSequence{width:100%;height:100%;object-fit:contain;object-position:center}
+  .scope-entry{width:min(88vw,620px);height:auto;aspect-ratio:1}.scope-entry img{width:100%;height:100%;inset:0;object-fit:contain;object-position:center}
+  .rotate-view{height:auto;aspect-ratio:4/3;overflow:visible}.config-visual{height:auto;aspect-ratio:1586/992;overflow:visible}.config-visual img{width:100%;height:100%;padding:1rem;object-fit:contain}
+  .feature-panel{overflow:visible}.feature-visual{height:auto;aspect-ratio:1586/992}.feature-visual img{width:100%;height:100%;object-fit:contain}
+  .inside-stage{left:2vw;right:2vw;height:52vh}.inside-assembled,.inside-layer{width:42vw;height:32vh}
+  .layer-rear{transform:translate(calc(-50% + var(--inside-p) * -26vw),-50%) scale(.62)}.layer-core{transform:translate(calc(-50% + var(--inside-p) * -11vw),-50%) scale(.5)}.layer-lenses{transform:translate(calc(-50% + var(--inside-p) * 3vw),-50%) scale(.45)}.layer-sensor{transform:translate(calc(-50% + var(--inside-p) * 15vw),-50%) scale(.22)}.layer-front{transform:translate(calc(-50% + var(--inside-p) * 27vw),-50%) scale(.55)}
+  .finale-image{width:94vw;height:auto;aspect-ratio:1672/941;overflow:visible}.finale-image img{width:100%;height:100%;object-fit:contain}
+}
+@media(max-width:560px){.hero{padding-top:13vh}.hero h1{font-size:clamp(3rem,14vw,4.5rem)}.hero-product{width:100vw;margin-top:4vh}}
