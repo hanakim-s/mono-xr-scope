@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MONO XR SCOPE — 발견하는 순간, 세상이 더 가까워진다." />
+  <title>MONO — XR Scope</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23171715'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23ece9e1' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23ad83c9'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="boarding" id="boarding" aria-label="MONO 시작 애니메이션">
+    <div class="boarding-orbit orbit-a"></div><div class="boarding-orbit orbit-b"></div>
+    <div class="boarding-lens"><i></i><span>MONO</span></div>
+    <p>CALIBRATING OPTICS</p><button id="skipIntro">SKIP</button>
+  </div>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="wordmark" href="#top">MONO</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a><a href="#design">Design</a><a href="#inside">Inside</a>
+    </div>
+    <a class="nav-cta" href="#experience">Look through</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">XR SCOPE · 01</p>
+        <h1 id="hero-title" class="reveal">A new way<br>to look closer.</h1>
+        <p class="lede reveal">발견하는 순간, 세상이 더 가까워진다.</p>
+      </div>
+      <div class="hero-product reveal" aria-label="MONO XR Scope 제품">
+        <img id="heroSequence" src="assets/hero-film-00.png" alt="중앙 줌링을 쥔 손과 함께 옆면에서 정면으로 회전하는 MONO XR Scope" />
+        <div class="hero-3d-label"><span>PRODUCT FILM</span><b>SCROLL TO TURN</b></div>
+      </div>
+      <div class="scroll-note"><span></span> Scroll to discover</div>
+      <div class="hero-meta"><span>Optical XR · 10×</span><span>Ivory ceramic · Aluminum</span></div>
+    </section>
+
+    <section class="statement">
+      <p class="eyebrow reveal">PHYSICAL × DIGITAL</p>
+      <h2 class="reveal">Turn the ring.<br><em>Reveal the unseen.</em></h2>
+      <p class="statement-copy reveal">익숙한 풍경을 향해 들어 올리고, 눈에 대고, 링을 돌리세요. MONO는 광학적 확대 위에 장소와 사물의 맥락을 겹쳐 보여줍니다.</p>
+    </section>
+
+    <section class="motion-section" aria-label="MONO optical motion film">
+      <div class="motion-copy"><p class="eyebrow">OPTICAL MOTION · 01.5</p><h2>Light becomes<br><em>information.</em></h2><span>Scroll through the optical path</span></div>
+      <div class="motion-frame"><canvas id="lensFilm"></canvas><div class="film-ui"><span>REC · MONO OPTICS</span><b>00:06</b></div><div class="film-ring"></div></div>
+    </section>
+
+    <section id="experience" class="experience-section">
+      <div class="experience-intro">
+        <p class="eyebrow">LOOK THROUGH MONO · 02</p>
+        <h2>Not a screen.<br>A new sight.</h2>
+        <p>렌즈를 선택해 안으로 들어가세요.</p>
+      </div>
+      <button class="scope-entry" id="scopeEntry" aria-label="MONO 렌즈로 보기">
+        <img src="assets/mono-hand-front.png" alt="손에 든 MONO 전면 렌즈" />
+        <span class="lens-target"><span>LOOK THROUGH</span></span>
+      </button>
+    </section>
+
+    <section class="xr-stage" id="xrStage" aria-label="MONO XR 줌 체험">
+      <div class="xr-world" id="xrWorld">
+        <div class="landscape" aria-hidden="true"></div>
+        <div class="reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="recognition marker-a"><span></span></div>
+        <div class="recognition marker-b"><span></span></div>
+        <div class="live-mode"><i></i><span>LIVE OPTICS</span><b>NORDIC COAST · 20:14</b></div>
+        <div class="poi-label poi-duomo"><span>01</span><div><b>NORTH RIDGE</b><small>8.6 KM</small></div></div>
+        <div class="poi-label poi-palazzo"><span>02</span><div><b>HARBOR FERRY</b><small>0.8 KM</small></div></div>
+        <article class="xr-card">
+          <p>LANDMARK · 8.6 KM</p><h3>North Ridge Lookout</h3>
+          <span>Elevation · Coastal mountain range</span>
+        </article>
+        <article class="xr-detail">
+          <small>CONTEXT LAYER</small><strong>1,284 m</strong>
+          <p>A coastal ridge shaped by glacial movement, now a natural reference point above the active harbor.</p>
+          <div><span>SCENIC ROUTE</span><span>42 MIN</span></div>
+        </article>
+        <aside class="nearby-info"><small>NEARBY</small><div><b>Harbor ferry</b><span>0.8 km · Eastbound</span></div><div><b>Coastal trail</b><span>2.4 km · Open</span></div></aside>
+        <div class="zoom-level"><strong id="zoomValue">1×</strong><span id="zoomLabel">REALITY</span></div>
+        <div class="zoom-scale" role="group" aria-label="확대 단계">
+          <button data-level="0" class="active">1×</button><button data-level="1">3×</button><button data-level="2">5×</button><button data-level="3">10×</button>
+        </div>
+        <div class="xr-hint">SCROLL TO ZOOM · DRAG TO EXPLORE</div>
+        <button class="xr-close" id="xrClose" aria-label="XR 체험 닫기">Close</button>
+      </div>
+      <div class="physical-ring" id="physicalRing" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-title">
+      <div class="journey-head"><p class="eyebrow">ONE NATURAL MOTION · 03</p><h2 id="journey-title">From noticing<br>to knowing.</h2></div>
+      <ol>
+        <li><span>01</span><b>CARRY</b><p>손이 닿는 곳에 가볍게.</p></li>
+        <li><span>02</span><b>FIND</b><p>시선이 머무는 순간.</p></li>
+        <li><span>03</span><b>LOOK</b><p>눈앞에 들어 올리고.</p></li>
+        <li><span>04</span><b>ZOOM</b><p>익숙한 링을 돌려.</p></li>
+        <li><span>05</span><b>DISCOVER</b><p>보이지 않던 맥락까지.</p></li>
+      </ol>
+    </section>
+
+    <section class="horizontal-story" id="horizontalStory">
+      <div class="horizontal-pin">
+        <div class="horizontal-title"><p class="eyebrow">FIELD FILM · 03.5</p><h2>A gesture<br>becomes discovery.</h2><p>스크롤해 하나의 장면을 따라가세요.</p></div>
+        <div class="horizontal-track" id="horizontalTrack">
+          <article class="cinema-card active"><img src="assets/cinema-carry.png" alt="코트 주머니 속 MONO"><div><span>01 · CARRY</span><h3>Ready when you notice.</h3><p>가볍게 지니고, 발견하는 순간 꺼냅니다.</p></div></article>
+          <article class="cinema-card motion-card"><canvas id="storyFilm" aria-label="MONO 제품이 측면에서 정면으로 회전하는 모션 영상"></canvas><div><span>02 · LIFT · MOTION</span><h3>One continuous gesture.</h3><p>들어 올리는 동안 제품의 시선도 풍경을 향합니다.</p></div><b class="motion-badge">MOTION · 06 SEC</b></article>
+          <article class="cinema-card"><img src="assets/cinema-look.png" alt="해안 풍경에서 MONO를 사용하는 여행자"><div><span>03 · LOOK</span><h3>Bring distance closer.</h3><p>눈에 대는 순간 주변은 사라지고 대상만 남습니다.</p></div></article>
+          <article class="cinema-card"><img src="assets/cinema-zoom.png" alt="손끝으로 MONO 줌 링을 돌리는 장면"><div><span>04 · ZOOM</span><h3>Turn to reveal.</h3><p>링의 회전이 확대와 공간 정보를 함께 깨웁니다.</p></div></article>
+        </div>
+        <div class="cinema-count"><b id="cinemaCurrent">01</b><span>/ 04</span></div>
+        <div class="horizontal-progress"><i id="horizontalProgress"></i></div>
+      </div>
+    </section>
+
+    <section id="design" class="product-lab">
+      <div class="lab-copy">
+        <p class="eyebrow">DESIGNED TO BE HELD · 04</p>
+        <h2>Every angle,<br>considered.</h2>
+        <p>드래그해서 MONO를 돌려보세요.</p>
+        <div class="angle-readout"><span>VIEW</span><strong id="angleValue">000°</strong></div>
+      </div>
+      <div class="rotate-view" id="rotateView" role="application" aria-label="드래그와 휠로 조작하는 MONO 실시간 3D 모델" tabindex="0">
+        <canvas id="mono3d" aria-hidden="true"></canvas>
+        <div class="viewer-status"><span>LIVE 3D</span><b>DRAG · TILT · ZOOM</b></div>
+        <div class="drag-pill">DRAG ANY DIRECTION</div>
+      </div>
+    </section>
+
+    <section class="configurator" id="sleeve">
+      <div class="config-visual">
+        <img id="sleeveProduct" src="assets/sleeve-saddle.png" alt="새들 브라운 탈부착 가죽 슬리브를 장착한 MONO 전체 제품" />
+        <span class="config-caption">FULL-GRAIN LEATHER · MAGNETIC FIT</span>
+      </div>
+      <div class="config-copy">
+        <p class="eyebrow">DETACHABLE LEATHER SLEEVE · 05</p>
+        <h2>Make it yours.<br>Remove it anytime.</h2>
+        <p>부드럽게 감싸고, 필요할 때 한 번에 분리되는 풀그레인 레더 슬리브.</p>
+        <div class="swatches" role="group" aria-label="가죽 슬리브 색상">
+          <button class="selected" data-image="assets/sleeve-saddle.png" data-name="Saddle Brown" aria-label="Saddle Brown"><i style="--c:#82452b"></i>Saddle Brown</button>
+          <button data-image="assets/sleeve-forest.png" data-name="Forest Green" aria-label="Forest Green"><i style="--c:#263c31"></i>Forest Green</button>
+          <button data-image="assets/sleeve-midnight.png" data-name="Midnight Black" aria-label="Midnight Black"><i style="--c:#171918"></i>Midnight Black</button>
+          <button data-image="assets/sleeve-taupe.png" data-name="Taupe" aria-label="Taupe"><i style="--c:#9b8068"></i>Taupe</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-explorer" id="featureExplorer" aria-labelledby="featureTitle">
+      <div class="feature-heading"><p class="eyebrow">EXPLORE MONO · 05.5</p><h2 id="featureTitle">Take a closer look.</h2></div>
+      <div class="feature-panel">
+        <div class="feature-nav" role="tablist" aria-label="MONO 제품 기능">
+          <button class="active" role="tab" aria-selected="true" data-image="assets/mono-hand-side.png" data-focus="whole" data-kicker="DESIGN" data-title="Designed to be held." data-copy="손에 자연스럽게 안착하는 균형 잡힌 실루엣과 매트 아이보리 마감."><i>−</i><span>디자인</span></button>
+          <button role="tab" aria-selected="false" data-image="assets/mono-turn-05.png" data-focus="lens" data-kicker="OPTICS" data-title="High-clarity lens." data-copy="주변광과 색의 깊이를 유지하면서 먼 풍경을 또렷하게 포착하는 멀티 코팅 광학계."><i>+</i><span>광학 렌즈</span></button>
+          <button role="tab" aria-selected="false" data-image="assets/mono-hand-side.png" data-focus="ring" data-kicker="CONTROL" data-title="Tactile zoom ring." data-copy="1×에서 10×까지, 손끝의 익숙한 회전만으로 단계적으로 확대합니다."><i>+</i><span>줌 링</span></button>
+          <button role="tab" aria-selected="false" data-image="assets/mono-inside-clean.png" data-focus="sensor" data-kicker="SPATIAL CORE" data-title="Optics become context." data-copy="광학 센서와 공간 연산 코어가 건축물과 지형을 인식해 필요한 맥락을 시야에 더합니다."><i>+</i><span>XR 센서</span></button>
+          <button role="tab" aria-selected="false" data-image="assets/mono-sleeve-v2.png" data-focus="sleeve" data-kicker="ACCESSORY" data-title="Attach. Carry. Remove." data-copy="풀그레인 레더 슬리브는 자석식 구조로 부드럽게 감싸고 필요할 때 빠르게 분리됩니다."><i>+</i><span>레더 슬리브</span></button>
+          <button role="tab" aria-selected="false" data-image="assets/mono-xr-transparent.png" data-focus="xr" data-kicker="XR VIEW" data-title="Information, in sight." data-copy="확대 단계에 따라 장소 이름, 거리, 역사와 주변 정보가 실제 풍경 위에 점진적으로 나타납니다."><i>+</i><span>XR 디스플레이</span></button>
+        </div>
+        <div class="feature-copy" aria-live="polite"><small id="featureKicker">DESIGN</small><h3 id="featureName">Designed to be held.</h3><p id="featureCopy">손에 자연스럽게 안착하는 균형 잡힌 실루엣과 매트 아이보리 마감.</p></div>
+        <div class="feature-visual" id="featureVisual" data-focus="whole"><img id="featureImage" src="assets/mono-hand-side.png" alt="선택한 MONO 기능 상세 이미지" /></div>
+      </div>
+    </section>
+
+    <section id="inside" class="exploded">
+      <div class="exploded-pin">
+        <div class="exploded-head"><p class="eyebrow">INSIDE MONO · 06</p><h2>Complex inside.<br>Effortless outside.</h2></div>
+        <div class="inside-stage" id="parts" aria-label="스크롤에 따라 분리되는 MONO 내부 구조">
+          <img class="inside-assembled" src="assets/inside-rear.png" alt="조립된 MONO XR Scope" />
+          <img class="inside-layer layer-rear" src="assets/inside-rear-v2.png" alt="MONO 후면 바디" />
+          <img class="inside-layer layer-core" src="assets/inside-core.png" alt="MONO 줌 링과 광학 코어" />
+          <img class="inside-layer layer-lenses" src="assets/inside-lenses.png" alt="MONO 광학 렌즈 배열" />
+          <img class="inside-layer layer-sensor" src="assets/inside-sensor.png" alt="MONO XR 센서" />
+          <img class="inside-layer layer-front" src="assets/inside-front.png" alt="MONO 전면 렌즈 하우징" />
+          <div class="inside-axis" aria-hidden="true"></div>
+        </div>
+        <div class="inside-readout"><span id="insideStep">01</span><div><b id="insideLabel">MONO ASSEMBLED</b><small>SCROLL TO SEPARATE</small></div></div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="finale-image"><img src="assets/mono-xr-transparent.png" alt="렌즈에서 간결한 XR 정보 레이어가 펼쳐지는 MONO XR Scope" /></div>
+      <p class="eyebrow">MONO XR SCOPE</p>
+      <h2>See further.<br><em>Discover more.</em></h2>
+      <a href="#top">Back to the beginning</a>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  <script type="module" src="three-viewer.js"></script>
+</body>
+</html>
+
