@@ -70,6 +70,28 @@
 }
 @media(max-width:560px){.hero{padding-top:13vh}.hero h1{font-size:clamp(3rem,14vw,4.5rem)}.hero-product{width:100vw;margin-top:4vh}}
 
+/* Final visual corrections: true component close-ups, complete sleeve products, clean XR view */
+.feature-visual[data-focus="lens"] img{
+  transform:scale(2.65) translate(-22%,1%);
+  transform-origin:76% 50%;
+}
+.feature-visual[data-focus="ring"] img{
+  transform:scale(1.9) translate(7%,0);
+  transform-origin:38% 48%;
+}
+.config-visual{overflow:hidden}
+.config-visual #sleeveProduct{
+  width:100%;height:100%;padding:clamp(1rem,2.4vw,2.5rem);
+  object-fit:contain!important;object-position:center!important;transform:none!important;
+}
+.physical-ring{display:none!important}
+@media(max-width:900px){
+  .feature-visual[data-focus="lens"] img{transform:scale(2.2) translate(-18%,0);transform-origin:76% 50%}
+  .feature-visual[data-focus="ring"] img{transform:scale(1.7) translate(5%,0);transform-origin:40% 48%}
+  .config-visual{overflow:hidden!important}
+  .config-visual #sleeveProduct{padding:1rem;object-fit:contain!important;object-position:center!important;transform:none!important}
+}
+
 /* Final tablet/mobile media contract. The Codex/Vercel preview is 939px wide,
    so the previous 900px breakpoint left it in a cropped desktop layout. */
 @media(max-width:1200px){
